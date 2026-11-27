@@ -1,8 +1,8 @@
 # LensLoom
 
-LensLoom is an early-stage, .NET photography workflow project. Its goal is to make the steps after a photo shoot easier by helping photographers ingest and organize image files, catalog useful photo information, and plan sessions around good light and weather.
+LensLoom is an early-stage, .NET photography workflow project. Its goal is to make the steps after a photo shoot easier by helping photographers ingest and organize image files, catalog useful photo metadata and color information, and plan sessions around important lighting conditions.
 
-The project is being built as a modular command-line application in C#. The current implementation is focused on the first workflow: importing and organizing photo files. Cataloging, session planning, and AI-assisted features are planned directions, not implemented capabilities yet.
+The project is being built as a modular command-line application in C#. The current implementation is focused on the first workflow: importing and organizing photo files. Cataloging, session planning, and AI-assisted features remain planned areas of development.
 
 ## Current status
 
@@ -29,7 +29,7 @@ These workflows are planned and may change as the project develops.
 
 ## AI integration
 
-A key future goal is to add AI integration to LensLoom. The intention is to explore how AI could assist photographers—for example, by helping describe or tag images, create useful summaries or captions, and provide context-aware recommendations for photo sessions.
+A key future goal is to add AI integration to LensLoom. The intention is to explore how AI could assist photographers—for example, by helping describe or tag images, create useful summaries or captions, or surface patterns across a catalog.
 
 AI integration is a goal for future development; it is not part of the current implementation. The specific capabilities, providers, and design have not yet been decided.
 
@@ -83,7 +83,7 @@ The session name is optional; when omitted, the current date is used. Use `--no-
 
 ## Project goals
 
-LensLoom aims to grow into a practical, modular photography workflow assistant: starting with reliable local photo ingestion, then adding cataloging and session-planning workflows, with AI-assisted capabilities as a future area of exploration.
+LensLoom aims to grow into a practical, modular photography workflow assistant: starting with reliable local photo ingestion, then adding cataloging and session-planning workflows, with AI-assisted features considered as optional enhancements rather than core requirements.
 
 ## Contributing
 
@@ -91,4 +91,4 @@ This project is at an early stage. Ideas, feedback, and contributions are welcom
 
 ## License
 
-No license has been specified yet. Until one is added, the project should not be assumed to grant permission to reuse, modify, or distribute its code.
+LensLoom is licensed under the [MIT License](LICENSE).
