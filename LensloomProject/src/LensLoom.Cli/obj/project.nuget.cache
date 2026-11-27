@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "uXANPzLQWDA=",
+  "success": true,
+  "projectFilePath": "C:\\Dev\\lensloom\\lensloom\\LensloomProject\\src\\LensLoom.Cli\\LensLoom.Cli.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\metadataextractor\\2.9.3\\metadataextractor.2.9.3.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\sixlabors.imagesharp\\4.1.4\\sixlabors.imagesharp.4.1.4.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.io.hashing\\8.0.0\\system.io.hashing.8.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\xmpcore\\6.1.10.1\\xmpcore.6.1.10.1.nupkg.sha512"
+  ],
+  "logs": []
+}

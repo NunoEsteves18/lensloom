@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/LensLoom.Catalog/LensLoom.Catalog.csproj" />
+    <Project Path="src/LensLoom.Cli/LensLoom.Cli.csproj" />
+    <Project Path="src/LensLoom.Core/LensLoom.Core.csproj" />
+    <Project Path="src/LensLoom.Ingest/LensLoom.Ingest.csproj" />
+    <Project Path="src/LensLoom.Planner/LensLoom.Planner.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/LensLoom.Core.Tests/LensLoom.Core.Tests.csproj" />
+  </Folder>
+</Solution>

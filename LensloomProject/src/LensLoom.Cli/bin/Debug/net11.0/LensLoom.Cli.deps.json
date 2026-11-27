@@ -1,0 +1,162 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v11.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v11.0": {
+      "LensLoom.Cli/1.0.0": {
+        "dependencies": {
+          "LensLoom.Catalog": "1.0.0",
+          "LensLoom.Core": "1.0.0",
+          "LensLoom.Ingest": "1.0.0",
+          "LensLoom.Planner": "1.0.0"
+        },
+        "runtime": {
+          "LensLoom.Cli.dll": {}
+        }
+      },
+      "MetadataExtractor/2.9.3": {
+        "dependencies": {
+          "XmpCore": "6.1.10.1"
+        },
+        "runtime": {
+          "lib/net8.0/MetadataExtractor.dll": {
+            "assemblyVersion": "2.9.3.0",
+            "fileVersion": "2.9.3.0",
+            "localPath": "MetadataExtractor.dll"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/4.1.4": {
+        "dependencies": {
+          "System.IO.Hashing": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.1.4.0",
+            "localPath": "SixLabors.ImageSharp.dll"
+          }
+        }
+      },
+      "System.IO.Hashing/8.0.0": {
+        "runtime": {
+          "lib/net8.0/System.IO.Hashing.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103",
+            "localPath": "System.IO.Hashing.dll"
+          }
+        }
+      },
+      "XmpCore/6.1.10.1": {
+        "runtime": {
+          "lib/netstandard2.0/XmpCore.dll": {
+            "assemblyVersion": "6.1.10.1",
+            "fileVersion": "6.1.10.1",
+            "localPath": "XmpCore.dll"
+          }
+        }
+      },
+      "LensLoom.Catalog/1.0.0": {
+        "dependencies": {
+          "LensLoom.Core": "1.0.0",
+          "SixLabors.ImageSharp": "4.1.4"
+        },
+        "runtime": {
+          "LensLoom.Catalog.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "LensLoom.Core/1.0.0": {
+        "runtime": {
+          "LensLoom.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "LensLoom.Ingest/1.0.0": {
+        "dependencies": {
+          "LensLoom.Core": "1.0.0",
+          "MetadataExtractor": "2.9.3"
+        },
+        "runtime": {
+          "LensLoom.Ingest.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "LensLoom.Planner/1.0.0": {
+        "dependencies": {
+          "LensLoom.Core": "1.0.0"
+        },
+        "runtime": {
+          "LensLoom.Planner.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LensLoom.Cli/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MetadataExtractor/2.9.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7dBcqlPC2Zc/bsZtXnv8nCWe5h5WsLHszzHtxnpcsVy4MwlD3KQ3wVNoiYBm0a3rzt5hRwAosPvLPhlXrV5lyg==",
+      "path": "metadataextractor/2.9.3",
+      "hashPath": "metadataextractor.2.9.3.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/4.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AEqFUiwql3qAwCg9jSRThU7ObOxvLYvAwKtctRuB/bIH/xMf10b2X+sVK5bwSHEafIp1AdDM4l71nzr/EJIcow==",
+      "path": "sixlabors.imagesharp/4.1.4",
+      "hashPath": "sixlabors.imagesharp.4.1.4.nupkg.sha512"
+    },
+    "System.IO.Hashing/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ne1843evDugl0md7Fjzy6QjJrzsjh46ZKbhf8GwBXb5f/gw97J4bxMs0NQKifDuThh/f0bZ0e62NPl1jzTuRqA==",
+      "path": "system.io.hashing/8.0.0",
+      "hashPath": "system.io.hashing.8.0.0.nupkg.sha512"
+    },
+    "XmpCore/6.1.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/Tp2/e39e7z8hLtS4TXt0FNNZHbf5yNFfHS0/59soXlgOzZlyRZivvzWpvujyaWkTWWgecp/1nHxkuc5vntn7A==",
+      "path": "xmpcore/6.1.10.1",
+      "hashPath": "xmpcore.6.1.10.1.nupkg.sha512"
+    },
+    "LensLoom.Catalog/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LensLoom.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LensLoom.Ingest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LensLoom.Planner/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

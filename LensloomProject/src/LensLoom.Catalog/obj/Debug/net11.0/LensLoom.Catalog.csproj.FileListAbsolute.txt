@@ -1,0 +1,16 @@
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\bin\Debug\net11.0\LensLoom.Catalog.deps.json
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\bin\Debug\net11.0\LensLoom.Catalog.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\bin\Debug\net11.0\LensLoom.Catalog.pdb
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\bin\Debug\net11.0\LensLoom.Core.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\bin\Debug\net11.0\LensLoom.Core.pdb
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\LensLoom.Catalog.csproj.AssemblyReference.cache
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\LensLoom.Catalog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\LensLoom.Catalog.AssemblyInfoInputs.cache
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\LensLoom.Catalog.AssemblyInfo.cs
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\LensLoom.Catalog.csproj.CoreCompileInputs.cache
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\LensLoom.Catalog.sourcelink.json
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\LensLoom.562A9028.Up2Date
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\LensLoom.Catalog.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\refint\LensLoom.Catalog.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\LensLoom.Catalog.pdb
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Catalog\obj\Debug\net11.0\ref\LensLoom.Catalog.dll

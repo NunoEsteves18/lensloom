@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v11.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v11.0": {
+      "LensLoom.Planner/1.0.0": {
+        "dependencies": {
+          "LensLoom.Core": "1.0.0"
+        },
+        "runtime": {
+          "LensLoom.Planner.dll": {}
+        }
+      },
+      "LensLoom.Core/1.0.0": {
+        "runtime": {
+          "LensLoom.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LensLoom.Planner/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LensLoom.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

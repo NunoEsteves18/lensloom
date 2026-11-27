@@ -1,0 +1,16 @@
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\bin\Debug\net11.0\LensLoom.Planner.deps.json
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\bin\Debug\net11.0\LensLoom.Planner.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\bin\Debug\net11.0\LensLoom.Planner.pdb
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\bin\Debug\net11.0\LensLoom.Core.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\bin\Debug\net11.0\LensLoom.Core.pdb
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\LensLoom.Planner.csproj.AssemblyReference.cache
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\LensLoom.Planner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\LensLoom.Planner.AssemblyInfoInputs.cache
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\LensLoom.Planner.AssemblyInfo.cs
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\LensLoom.Planner.csproj.CoreCompileInputs.cache
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\LensLoom.Planner.sourcelink.json
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\LensLoom.D4FEE667.Up2Date
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\LensLoom.Planner.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\refint\LensLoom.Planner.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\LensLoom.Planner.pdb
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Planner\obj\Debug\net11.0\ref\LensLoom.Planner.dll

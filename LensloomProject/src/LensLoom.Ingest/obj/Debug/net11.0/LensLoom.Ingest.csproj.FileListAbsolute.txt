@@ -1,0 +1,16 @@
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\bin\Debug\net11.0\LensLoom.Ingest.deps.json
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\bin\Debug\net11.0\LensLoom.Ingest.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\bin\Debug\net11.0\LensLoom.Ingest.pdb
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\bin\Debug\net11.0\LensLoom.Core.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\bin\Debug\net11.0\LensLoom.Core.pdb
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\LensLoom.Ingest.csproj.AssemblyReference.cache
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\LensLoom.Ingest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\LensLoom.Ingest.AssemblyInfoInputs.cache
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\LensLoom.Ingest.AssemblyInfo.cs
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\LensLoom.Ingest.csproj.CoreCompileInputs.cache
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\LensLoom.Ingest.sourcelink.json
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\LensLoom.BD9F7311.Up2Date
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\LensLoom.Ingest.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\refint\LensLoom.Ingest.dll
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\LensLoom.Ingest.pdb
+C:\Dev\lensloom\lensloom\LensloomProject\src\LensLoom.Ingest\obj\Debug\net11.0\ref\LensLoom.Ingest.dll
