@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using LensLoom.Catalog;
 using LensLoom.Core.Abstractions;
 using LensLoom.Core.Models;
 using LensLoom.Ingest;
@@ -13,6 +14,7 @@ if (args.Length == 0 || args[0].Equals("help", StringComparison.OrdinalIgnoreCas
 return args[0].ToLowerInvariant() switch
 {
     "ingest" => await RunIngestAsync(args[1..]),
+    "catalog" => await RunCatalogAsync(args[1..]),
     "planner" => await RunPlannerAsync(args[1..]),
     _ => UnknownCommand(args[0])
 };
@@ -191,6 +193,144 @@ static async Task<int> RunIngestAsync(string[] args)
     return errorCount > 0 ? 1 : 0;
 }
 
+static async Task<int> RunCatalogAsync(string[] args)
+{
+    string? inputDir = null;
+    string? outputDir = null;
+    int maxColors = 5;
+    bool recursive = true;
+
+    for (int i = 0; i < args.Length; i++)
+    {
+        var current = args[i];
+        switch (current)
+        {
+            case "--input" or "-i" when i + 1 < args.Length:
+                inputDir = args[++i];
+                break;
+            case "--output" or "-o" when i + 1 < args.Length:
+                outputDir = args[++i];
+                break;
+            case "--max-colors" when i + 1 < args.Length &&
+                                      int.TryParse(args[++i], NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedColors) &&
+                                      parsedColors > 0:
+                maxColors = parsedColors;
+                break;
+            case "--no-recursive":
+                recursive = false;
+                break;
+            case "--help" or "-h":
+                PrintCatalogUsage();
+                return 0;
+            default:
+                Console.Error.WriteLine($"Unknown or invalid option for catalog: '{current}'");
+                PrintCatalogUsage();
+                return 1;
+        }
+    }
+
+    if (string.IsNullOrWhiteSpace(inputDir) || string.IsNullOrWhiteSpace(outputDir))
+    {
+        Console.Error.WriteLine("Both --input and --output are required for 'catalog'.");
+        PrintCatalogUsage();
+        return 1;
+    }
+
+    if (!Directory.Exists(inputDir))
+    {
+        Console.Error.WriteLine($"Input directory does not exist: '{inputDir}'");
+        return 1;
+    }
+
+    using var cts = new CancellationTokenSource();
+    Console.CancelKeyPress += (_, eventArgs) =>
+    {
+        eventArgs.Cancel = true;
+        cts.Cancel();
+    };
+
+    var supportedExtensions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+    {
+        ".jpg", ".jpeg", ".png"
+    };
+
+    var searchOption = recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+    var imageFiles = Directory.EnumerateFiles(inputDir, "*.*", searchOption)
+        .Where(path =>
+        {
+            var name = Path.GetFileName(path);
+            if (name.StartsWith('.'))
+            {
+                return false;
+            }
+
+            return supportedExtensions.Contains(Path.GetExtension(path));
+        })
+        .OrderBy(path => path, StringComparer.OrdinalIgnoreCase)
+        .ToList();
+
+    if (imageFiles.Count == 0)
+    {
+        Console.WriteLine("No supported image files (.jpg, .jpeg, .png) found to catalog.");
+        return 0;
+    }
+
+    IExifReader exifReader = new MetadataExtractorExifReader();
+    IPaletteAnalyzer paletteAnalyzer = new ImageSharpPaletteAnalyzer();
+    ICatalogCardGenerator cardGenerator = new DefaultCatalogCardGenerator();
+    ICatalogExporter exporter = new CatalogFileExporter();
+
+    var cards = new List<CatalogCard>(imageFiles.Count);
+    var errorCount = 0;
+
+    foreach (var imagePath in imageFiles)
+    {
+        if (cts.IsCancellationRequested)
+        {
+            break;
+        }
+
+        try
+        {
+            var fileInfo = new FileInfo(imagePath);
+            var exif = await exifReader.ReadAsync(imagePath, cts.Token);
+            var palette = await paletteAnalyzer.AnalyzeAsync(imagePath, maxColors, cts.Token);
+            var formatKind = PhotoFolderOrganizer.DetectFormat(imagePath);
+
+            var asset = new PhotoAsset(
+                SourcePath: imagePath,
+                FileName: fileInfo.Name,
+                Sha256: string.Empty,
+                FileSizeBytes: fileInfo.Length,
+                FormatKind: formatKind,
+                Exif: exif);
+
+            var card = cardGenerator.CreateCard(asset, palette);
+            cards.Add(card);
+            Console.WriteLine($"[CAT]  {fileInfo.Name} -> {palette.TemperatureProfile} ({palette.DominantColors.Count} swatches)");
+        }
+        catch (OperationCanceledException)
+        {
+            Console.WriteLine("Catalog generation cancelled.");
+            break;
+        }
+        catch (Exception ex)
+        {
+            errorCount++;
+            Console.Error.WriteLine($"[ERR]  {imagePath}: {ex.Message}");
+        }
+    }
+
+    if (cards.Count > 0)
+    {
+        await exporter.ExportAsync(cards, outputDir, CancellationToken.None);
+        Console.WriteLine($"Catalog exported to '{outputDir}' (catalog.json and catalog.md).");
+    }
+
+    Console.WriteLine($"Done. Cataloged: {cards.Count}, Errors: {errorCount}");
+    return errorCount > 0 ? 1 : 0;
+}
+
 static async Task<int> RunPlannerAsync(string[] args)
 {
     double latitude = 39.7436;   // Leiria por omissão
@@ -317,6 +457,7 @@ static void PrintUsage()
         LensLoom CLI
         Commands:
           ingest    Import RAW/JPEG files with EXIF, SHA-256 deduplication, and summary
+          catalog   Analyze image color palettes and export catalog.json and catalog.md
           planner   Calculate solar/golden-hour windows, score weather, and dispatch alerts
 
         Run 'lensloom <command> --help' for command-specific options.
@@ -334,6 +475,21 @@ static void PrintIngestUsage()
           -d, --destination <path>  Destination library root path (required)
           --session <name>          Session folder name (defaults to current date yyyy-MM-dd)
           --no-recursive            Scan only the top-level source directory
+          -h, --help                Show this help message
+        """);
+}
+
+static void PrintCatalogUsage()
+{
+    Console.WriteLine("""
+        Usage:
+          lensloom catalog --input <path> --output <path> [--max-colors <n>] [--no-recursive]
+
+        Options:
+          -i, --input <path>        Folder containing images to catalog (required)
+          -o, --output <path>       Destination folder for catalog.json and catalog.md (required)
+          --max-colors <n>          Maximum dominant swatches per photo (default: 5)
+          --no-recursive            Scan only the top-level input directory
           -h, --help                Show this help message
         """);
 }

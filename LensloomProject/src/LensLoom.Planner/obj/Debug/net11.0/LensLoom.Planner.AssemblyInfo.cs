@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LensLoom.Planner")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa3562bb545a77c3ee873b755293138c88874f0d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb4c0953914f8005ee92b8bff1b0f187584c8109")]
 [assembly: System.Reflection.AssemblyProductAttribute("LensLoom.Planner")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LensLoom.Planner")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
