@@ -1,44 +1,94 @@
 # LensLoom
 
-**LensLoom** is a modular .NET C# connector designed to automate post-capture photography workflows and session planning.
+LensLoom is an early-stage, .NET photography workflow project. Its goal is to make the steps after a photo shoot easier by helping photographers ingest and organize image files, catalog useful photo information, and plan sessions around good light and weather.
 
-Instead of acting as another photo editor or heavy catalog viewer, LensLoom bridges local file systems, image metadata, and environmental data through three independent, composable workflows.
+The project is being built as a modular command-line application in C#. The current implementation is focused on the first workflow: importing and organizing photo files. Cataloging, session planning, and AI-assisted features are planned directions, not implemented capabilities yet.
 
----
+## Current status
 
-## Core Capabilities
+### Implemented: photo ingestion
 
-### 1. Automated Ingestion & Triage (`ingest`)
-- Monitors incoming folders or SD card mounts for new image files.
-- Extracts EXIF metadata (capture timestamp, camera body, lens model, focal length, aperture, shutter speed, ISO).
-- Computes SHA-256 hashes to prevent duplicate imports.
-- Organizes files into a deterministic `Year/Month/Session` directory layout, separating `RAW` and `JPEG` assets.
-- Generates a Markdown session summary with gear usage statistics.
+The `ingest` command currently:
 
-### 2. Metadata & Color Cataloging (`catalog`)
-- Scans a curated folder of selected photographs.
-- Extracts dominant color palettes (HEX values and color temperature profiles) alongside camera EXIF settings.
-- Outputs structured JSON and Markdown cards ready for portfolio galleries, personal websites, or social media captions.
+- Scans a source folder for supported RAW and JPEG files, recursively by default.
+- Reads available EXIF metadata, such as capture time and camera settings.
+- Calculates SHA-256 file hashes to identify duplicate imports.
+- Organizes imported files into a date- and session-based folder structure, separating RAW and JPEG assets.
+- Writes a Markdown summary for the imported session.
+- Reports successful imports, duplicates, and errors in the console.
 
-### 3. Session & Golden Hour Planner (`planner`)
-- Calculates sunrise, sunset, Golden Hour, and Blue Hour windows for saved locations.
-- Enriches time windows with local weather forecasts (cloud cover percentage, wind speed, precipitation probability).
-- Evaluates configurable scoring rules and dispatches alerts when optimal shooting conditions are detected.
+### Planned: cataloging and session planning
 
----
+The broader project direction includes:
 
-## Architecture
+- Cataloging selected photographs with metadata and color information.
+- Planning photo sessions using sunrise, sunset, Golden Hour, and Blue Hour times.
+- Bringing in local weather information to help assess shooting conditions.
 
-LensLoom is organized around a shared domain core with isolated modules for each workflow:
+These workflows are planned and may change as the project develops.
+
+## AI integration
+
+A key future goal is to add AI integration to LensLoom. The intention is to explore how AI could assist photographers—for example, by helping describe or tag images, create useful summaries or captions, and provide context-aware recommendations for photo sessions.
+
+AI integration is a goal for future development; it is not part of the current implementation. The specific capabilities, providers, and design have not yet been decided.
+
+## Project structure
+
+The solution is organized into a shared core, workflow modules, a CLI, and tests:
 
 ```text
-LensLoom/
-├── LensLoom.sln
+LensloomProject/
+├── LensLoom.slnx
+├── Program.cs                 # Current CLI entry point
 ├── src/
-│   ├── LensLoom.Core/          # Shared domain models, abstractions, and scoring/formatting rules
-│   ├── LensLoom.Ingest/        # File watching, EXIF extraction, deduplication, and folder organization
-│   ├── LensLoom.Catalog/       # Dominant color analysis and portfolio/caption card generation
-│   ├── LensLoom.Planner/       # Solar calculations, weather API integration, and alert rules
-│   └── LensLoom.Cli/           # Unified CLI entry point (ingest, catalog, planner commands)
+│   ├── LensLoom.Core/         # Shared models and abstractions
+│   ├── LensLoom.Ingest/       # EXIF reading, deduplication, and file organization
+│   ├── LensLoom.Catalog/      # Planned catalog workflow
+│   ├── LensLoom.Planner/      # Planned session-planning workflow
+│   └── LensLoom.Cli/          # CLI module in the solution structure
 └── tests/
-    └── LensLoom.Core.Tests/    # Unit tests for domain logic, naming rules, and condition scoring
+    └── LensLoom.Core.Tests/
+```
+
+## Requirements
+
+- .NET 11 SDK
+
+## Getting started
+
+Restore and build the solution:
+
+```bash
+dotnet restore LensloomProject/LensLoom.slnx
+dotnet build LensloomProject/LensLoom.slnx
+```
+
+Show the available command usage:
+
+```bash
+dotnet run --project LensloomProject/LensloomProject.csproj -- --help
+```
+
+Ingest photos by providing a source folder and a destination library folder:
+
+```bash
+dotnet run --project LensloomProject/LensloomProject.csproj -- ingest \
+  --source "/path/to/photos" \
+  --destination "/path/to/photo-library" \
+  --session "Coastal Walk"
+```
+
+The session name is optional; when omitted, the current date is used. Use `--no-recursive` to scan only the top-level source folder.
+
+## Project goals
+
+LensLoom aims to grow into a practical, modular photography workflow assistant: starting with reliable local photo ingestion, then adding cataloging and session-planning workflows, with AI-assisted capabilities as a future area of exploration.
+
+## Contributing
+
+This project is at an early stage. Ideas, feedback, and contributions are welcome. Please open an issue to discuss a significant feature or design change before submitting a pull request.
+
+## License
+
+No license has been specified yet. Until one is added, the project should not be assumed to grant permission to reuse, modify, or distribute its code.
